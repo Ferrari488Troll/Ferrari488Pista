@@ -63,6 +63,7 @@
             font-size: 1.5em;
             font-weight: bold;
             margin-top: 20px;
+            display: none; /* Hide the message by default */
         }
     </style>
 </head>
@@ -71,11 +72,19 @@
         <h1>Congratulations!</h1>
         <p>You've been selected to receive a free Ferrari 488 Pista!</p>
         <img src="Ferrari488Pista.jpg" alt="Ferrari 488 Pista" style="width: 100%; max-width: 600px; height: auto;">
-        <a href="#" class="cta-button">Claim Your Ferrari Now!</a>
-        <p class="message">You now have a virus lol, and I stole your credit card info XD</p>
+        <a href="#" class="cta-button" onclick="showMessage(event)">Claim Your Ferrari Now!</a>
+        <p id="prank-message" class="message">You now have a virus lol, and I stole your credit card info XD</p>
         <p>Send this link to 488 contacts and the page will update, you can then claim your prize</p>
         <p class="disclaimer">*Disclaimer: This is a once in a lifetime opportunity!!! DONT MISS OUT ;)</p>
     </div>
+
+    <script>
+        function showMessage(event) {
+            event.preventDefault(); // Prevent the default button behavior
+            document.getElementById('prank-message').style.display = 'block'; // Show the prank message
+        }
+    </script>
 </body>
 </html>
+
 
